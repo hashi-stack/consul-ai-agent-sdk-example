@@ -14,17 +14,8 @@
 # 🧠 Gemini-based AI agent provided by Google's ADK
 from google.adk.agents.llm_agent import LlmAgent
 
-# 📚 ADK services for session, memory, and file-like "artifacts"
-from google.adk.sessions import InMemorySessionService
-from google.adk.memory.in_memory_memory_service import InMemoryMemoryService
-from google.adk.artifacts import InMemoryArtifactService
 
-# 🏃 The "Runner" connects the agent, session, memory, and files into a complete system
-from google.adk.runners import Runner
 from google.adk.tools import FunctionTool
-
-# 🧾 Gemini-compatible types for formatting input/output messages
-from google.genai import types
 
 # 🔐 Load environment variables (like API keys) from a `.env` file
 from dotenv import load_dotenv

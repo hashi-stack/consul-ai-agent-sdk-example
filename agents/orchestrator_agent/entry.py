@@ -20,7 +20,6 @@ from server.server import A2AServer
 # Pydantic models for defining agent metadata (AgentCard, etc.)
 from models.agent import AgentCard, AgentCapabilities, AgentSkill
 from utilities.consul_discovery import ConsulDiscoveryClient
-from utilities.consul_agent import ConsulTaskManager
 
 # Configure root logger to show INFO-level messages
 logging.basicConfig(level=logging.INFO)
