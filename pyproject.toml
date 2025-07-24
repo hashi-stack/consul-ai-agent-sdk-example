@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "consul-ai-agent-sdkexample"
+version = "0.1.0"
+description = "consul-ai-agent-sdk-example"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "consul-ai-agent-sdk>=0.1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "mcps*", "app*"]
