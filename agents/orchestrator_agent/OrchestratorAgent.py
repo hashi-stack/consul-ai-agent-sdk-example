@@ -60,32 +60,9 @@ class OrchestratorAgent(ConsulEnabledAIAgent):
                 skill_details.append(f"  • {skill_name}:{tags_str}\n    Description: {skill_desc}{instruction_str}{example_str}")
             agent_skills_list.append(f"- {name}:\n" + "\n".join(skill_details))
         agent_skills = "\n".join(agent_skills_list)
-        #
-        # # Build the list of available tools from the current instance
-        # agent_tools_list = []
-        # i = 1
-        # for tool in self._agent.tools:
-        #     if callable(tool):
-        #         agent_tools_list.append(f"{i}) {tool.__name__}: {tool.__doc__.strip() if tool.__doc__ else 'No description provided'}\n")
-        #         i += 1
-        # # for i, mcp_toolset in enumerate(self._remote_mcp_tools.values(), start=i):
-        #     # Add MCPToolset tools to the list
-        #     if hasattr(mcp_toolset, 'get_tools'):
-        #         # tools = await mcp_toolset.get_tools()
-        #         # Await the async get_tools() call and get the result
-        #         import asyncio
-        #         if asyncio.iscoroutinefunction(mcp_toolset.get_tools):
-        #             tools = asyncio.run(mcp_toolset.get_tools())
-        #         else:
-        #             tools = mcp_toolset.get_tools()
-        #         for tool in tools:
-        #             agent_tools_list.append(f"{i}) {tool.name}: {tool.description or 'No description provided'}\n")
-
-        # agent_tools_list.append(f"{i}) MCPToolset: Provides access to MCP server APIs.\n")
 
         return (
             "You are an orchestrator agent that routes user queries to specialized child agents.\n\n"
-            # "Available tools:\n" + "".join(agent_tools_list) + "\n\n"
             "IMPORTANT GUIDELINES:\n"
             "- If required split the user query into multiple queries curated for each agent. Also do not hesitate to pipe the response of one query into the next task.\n"
             "- Always break down the user query into a chain of thoughts and sub-tasks.\n"
