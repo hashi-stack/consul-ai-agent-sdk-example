@@ -16,9 +16,6 @@ from server.server import A2AServer
 # Models for describing agent capabilities and metadata
 from models.agent import AgentCard, AgentCapabilities, AgentSkill
 
-# Task manager and agent logic
-from agents.cities_agent.agent import CitiesAgent
-
 # CLI and logging support
 import click           # For creating a clean command-line interface
 import logging         # For logging errors and info to the console
@@ -101,8 +98,8 @@ def main(host, port):
         description="This agent specializes in listing cities and providing information about geographic regions worldwide",
         url=url,
         version="1.0.0",
-        defaultInputModes=CitiesAgent.SUPPORTED_CONTENT_TYPES,
-        defaultOutputModes=CitiesAgent.SUPPORTED_CONTENT_TYPES,
+        defaultInputModes=TravelAgent.SUPPORTED_CONTENT_TYPES,
+        defaultOutputModes=TravelAgent.SUPPORTED_CONTENT_TYPES,
         capabilities=capabilities,
         skills=[skill_countries, skill_cities, skill_regions, skill_currency_exchange_rate]
     )

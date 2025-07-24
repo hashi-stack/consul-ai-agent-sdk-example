@@ -13,7 +13,7 @@ import logging                              # Standard Python logging module
 import os
 import click                                # Library for building CLI interfaces
 
-from agents.host_pipeline_agent.OrchestratorAgent import OrchestratorAgent
+from agents.orchestrator_agent.OrchestratorAgent import OrchestratorAgent
 # Utility for discovering remote A2A agents from a local registry
 # Shared A2A server implementation (Starlette + JSON-RPC)
 from server.server import A2AServer
